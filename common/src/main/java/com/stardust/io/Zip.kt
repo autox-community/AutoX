@@ -16,7 +16,7 @@ object Zip {
             generateSequence { input.nextEntry }
                 .filterNotNull()
                 .filter { !it.isDirectory && it.name.startsWith(unzipPath1) }
-                .map {
+                .forEach {
                     val f = File(newDir, it.name.replace(regex, ""))
                     f.parentFile?.let {
                         if (!it.exists()) it.mkdirs()
