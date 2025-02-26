@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AutoX.js</title>
+    <base href="./" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge,chrome=1"
+    />
+    <meta
+      name="description"
+      content="Description"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+
+    <!-- 主题 -->
+    <link
+      href="static/vue.css"
+      rel="stylesheet"
+    />
+
+    <!-- 侧边栏目录 箭头样式 -->
+    <link
+      href="static/sidebar.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="app">加载中，请稍后...</div>
+    <script>
+      window.$docsify = {
+        // 侧边栏顶部名称
+        name: "AutoX.js 文档",
+
+        // 右上角仓库
+        // repo: "kkevsekk1/AutoX",
+
+        // 封面
+        coverpage: true,
+
+        // 404 页面
+        notFoundPage: true,
+
+        // 加载 侧边栏
+        loadSidebar: true,
+
+        // 自动生成侧边栏的层级, 默认0
+        subMaxLevel: 6,
+
+        // 首页
+        homepage: "overview.md",
+
+        maxAge: 0, //  lru-cache 设置
+
+        // 跳转后自动到顶部
+        auto2top: true,
+
+        // 底部导航
+        pagination: {
+          previousText: "上一页",
+          nextText: "下一页",
+          crossChapter: true,
+          crossChapterText: true,
+        },
+
+        // 全文搜索
+        search: {
+          depth: 6,
+          noData: "没有搜到!",
+          placeholder: "搜索...",
+          // 避免搜索索引冲突,同一域下的多个网站之间
+          namespace: "website-1",
+        },
+        sidebarDisplayLevel: 1,
+        //点击复制示例代码
+        copyCode: {
+          buttonText: "复制",
+          errorText: "错误",
+          successText: "成功",
+        },
+      };
+    </script>
+
+    <script src="static/docsify.min.js"></script>
+
+    <!-- 全文搜索 -->
+    <script src="static/search.min.js"></script>
+
+    <!-- 底部导航 -->
+    <script src="static/docsify-pagination.min.js"></script>
+
+    <!-- 支持 emoji -->
+    <!-- https://github.com/docsifyjs/docsify/blob/develop/docs/emoji.md -->
+    <script src="static/emoji.min.js"></script>
+
+    <!-- 侧边栏目录 折叠 -->
+    <script src="static/docsify-sidebar-collapse.min.js"></script>
+
+    <!-- 图片放大 -->
+    <script src="static/zoom-image.min.js"></script>
+
+    <!-- 复制到剪贴板 -->
+    <script src="static/docsify-copy-code.min.js"></script>
+  </body>
+</html>
