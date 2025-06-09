@@ -2,7 +2,7 @@ package org.autojs.phonefarm.ui.update;
 
 import android.app.Activity;
 
-import org.autojs.autoxjs.BuildConfig;
+import org.autojs.phonefarm.BuildConfig;
 import org.autojs.phonefarm.network.VersionService;
 import org.autojs.phonefarm.network.entity.VersionInfo;
 import org.autojs.phonefarm.tool.SimpleObserver;

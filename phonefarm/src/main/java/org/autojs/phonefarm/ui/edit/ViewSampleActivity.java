@@ -19,7 +19,7 @@ import com.stardust.app.OnActivityResultDelegate;
 import com.stardust.autojs.engine.JavaScriptEngine;
 import com.stardust.autojs.execution.ScriptExecution;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.autojs.AutoJs;
 import org.autojs.phonefarm.model.sample.SampleFile;
 import org.autojs.phonefarm.ui.BaseActivity;

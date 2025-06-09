@@ -23,7 +23,7 @@ import com.stardust.pio.UncheckedIOException;
 import com.tencent.bugly.crashreport.BuglyLog;
 
 import org.autojs.phonefarm.Pref;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.external.ScriptIntents;
 import org.autojs.phonefarm.model.explorer.Explorer;
 import org.autojs.phonefarm.model.explorer.ExplorerDirPage;
@@ -37,7 +37,7 @@ import org.autojs.phonefarm.model.script.Scripts;
 import org.autojs.phonefarm.network.download.DownloadManager;
 import org.autojs.phonefarm.ui.filechooser.FileChooserDialogBuilder;
 import org.autojs.phonefarm.ui.shortcut.ShortcutCreateActivity;
-import org.autojs.phonefarm.ui.timing.TimedTaskSettingActivity_;
+// import org.autojs.phonefarm.ui.timing.TimedTaskSettingActivity_;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;
 
 import org.reactivestreams.Publisher;
@@ -368,9 +368,11 @@ public class ScriptOperations {
     }
 
     public void timedTask(ScriptFile scriptFile) {
-        TimedTaskSettingActivity_.intent(mContext)
-                .extra(ScriptIntents.EXTRA_KEY_PATH, scriptFile.getPath())
-                .start();
+        // TODO: Implement timed task functionality
+        // TimedTaskSettingActivity_.intent(mContext)
+        //         .extra(ScriptIntents.EXTRA_KEY_PATH, scriptFile.getPath())
+        //         .start();
+        Toast.makeText(mContext, "Timed task feature is not available", Toast.LENGTH_SHORT).show();
     }
 
 

@@ -14,7 +14,7 @@ import com.stardust.pio.PFiles;
 import com.stardust.util.ClipboardUtil;
 import com.stardust.util.IntentUtil;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.model.indices.AndroidClass;
 import org.autojs.phonefarm.model.indices.ClassSearchingItem;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;

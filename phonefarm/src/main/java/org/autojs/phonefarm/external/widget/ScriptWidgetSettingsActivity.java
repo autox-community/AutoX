@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.model.explorer.Explorer;
 import org.autojs.phonefarm.model.explorer.ExplorerDirPage;
 import org.autojs.phonefarm.model.explorer.ExplorerFileProvider;

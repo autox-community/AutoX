@@ -21,9 +21,9 @@ import com.stardust.view.accessibility.AccessibilityService;
 import com.stardust.view.accessibility.LayoutInspector;
 import com.stardust.view.accessibility.NodeInfo;
 
-import org.autojs.autoxjs.BuildConfig;
+import org.autojs.phonefarm.BuildConfig;
 import org.autojs.phonefarm.Pref;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.devplugin.DevPlugin;
 import org.autojs.phonefarm.external.fileprovider.AppFileProvider;
 import org.autojs.phonefarm.tool.AccessibilityServiceTool;

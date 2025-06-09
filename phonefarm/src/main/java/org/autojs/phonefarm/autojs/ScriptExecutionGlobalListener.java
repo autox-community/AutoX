@@ -4,7 +4,7 @@ import com.stardust.app.GlobalAppContext;
 import com.stardust.autojs.execution.ScriptExecution;
 import com.stardust.autojs.execution.ScriptExecutionListener;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 /**
  * Created by Stardust on 2017/5/3.

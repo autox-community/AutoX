@@ -10,7 +10,7 @@ import com.stardust.app.GlobalAppContext;
 import com.stardust.autojs.runtime.accessibility.AccessibilityConfig;
 
 import org.autojs.phonefarm.autojs.key.GlobalKeyObserver;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;

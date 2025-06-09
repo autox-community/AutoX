@@ -17,7 +17,7 @@ import android.widget.TextView
 import com.stardust.util.ViewUtil
 import com.stardust.view.accessibility.NodeInfo
 import org.autojs.phonefarm.ui.widget.LevelBeamView
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import pl.openrnd.multilevellistview.*
 import java.util.*
 

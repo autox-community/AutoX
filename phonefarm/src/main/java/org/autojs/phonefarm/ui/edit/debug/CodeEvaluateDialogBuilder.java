@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;
 
 public class CodeEvaluateDialogBuilder extends ThemeColorMaterialDialogBuilder {

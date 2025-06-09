@@ -5,7 +5,7 @@ import android.graphics.Color;
 import com.stardust.app.GlobalAppContext;
 import com.stardust.pio.PFiles;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.model.explorer.ExplorerFileItem;
 import org.autojs.phonefarm.model.explorer.ExplorerItem;
 import org.autojs.phonefarm.model.explorer.ExplorerPage;

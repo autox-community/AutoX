@@ -21,7 +21,7 @@ import kotlinx.coroutines.withContext
 import org.androidannotations.annotations.AfterViews
 import org.androidannotations.annotations.EActivity
 import org.androidannotations.annotations.ViewById
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.autojs.phonefarm.tool.BitmapTool
 import org.autojs.phonefarm.tool.writeTo
 import org.autojs.phonefarm.ui.BaseActivity

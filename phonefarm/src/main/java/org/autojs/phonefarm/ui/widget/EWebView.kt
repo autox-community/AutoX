@@ -30,7 +30,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import org.autojs.phonefarm.Pref
 import org.autojs.phonefarm.model.script.Scripts
 import org.autojs.phonefarm.tool.ImageSelector
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import java.io.File
 import java.io.IOException
 import java.io.InputStream

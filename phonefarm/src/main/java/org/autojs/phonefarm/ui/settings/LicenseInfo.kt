@@ -3,7 +3,7 @@ package org.autojs.phonefarm.ui.settings
 import android.content.Context
 import de.psdev.licensesdialog.LicenseResolver
 import de.psdev.licensesdialog.licenses.License
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 
 object LicenseInfo {
     fun install(){

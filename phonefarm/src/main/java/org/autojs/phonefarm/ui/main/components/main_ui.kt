@@ -26,7 +26,7 @@ import com.stardust.util.IntentUtil
 import org.autojs.phonefarm.ui.log.LogActivityKt
 import org.autojs.phonefarm.ui.main.web.DocumentSourceSelectDialog
 import org.autojs.phonefarm.ui.main.web.EditorAppManager.Companion.loadHomeDocument
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 
 //主界面日志按钮
 @Composable

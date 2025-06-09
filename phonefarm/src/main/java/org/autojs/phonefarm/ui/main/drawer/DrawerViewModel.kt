@@ -18,7 +18,7 @@ import org.autojs.phonefarm.Pref
 import org.autojs.phonefarm.network.VersionService2
 import org.autojs.phonefarm.network.entity.GithubReleaseInfo
 import org.autojs.phonefarm.network.entity.isLatestVersion
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import java.io.File
 
 class DrawerViewModel(private val context: Application) : AndroidViewModel(context) {

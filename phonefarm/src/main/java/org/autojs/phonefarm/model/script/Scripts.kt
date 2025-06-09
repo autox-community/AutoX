@@ -19,7 +19,7 @@ import org.autojs.phonefarm.external.ScriptIntents
 import org.autojs.phonefarm.external.fileprovider.AppFileProvider
 import org.autojs.phonefarm.external.shortcut.Shortcut
 import org.autojs.phonefarm.external.shortcut.ShortcutActivity
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.mozilla.javascript.RhinoException
 import java.io.File
 import java.io.FileFilter

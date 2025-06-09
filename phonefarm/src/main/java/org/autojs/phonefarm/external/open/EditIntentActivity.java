@@ -15,7 +15,7 @@ import com.stardust.pio.PFiles;
 
 import org.autojs.phonefarm.ui.BaseActivity;
 import org.autojs.phonefarm.ui.edit.EditActivity;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import java.io.File;
 

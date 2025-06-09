@@ -6,7 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import com.stardust.autojs.execution.ExecutionConfig
-import org.autojs.autoxjs.BuildConfig
+import org.autojs.phonefarm.BuildConfig
 import org.autojs.phonefarm.external.ScriptIntents
 import org.autojs.phonefarm.storage.database.BaseModel
 import org.joda.time.DateTime

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bignerdranch.expandablerecyclerview.ChildViewHolder;
 import com.bignerdranch.expandablerecyclerview.ExpandableRecyclerAdapter;
@@ -23,12 +24,12 @@ import com.stardust.autojs.script.AutoFileSource;
 import com.stardust.autojs.workground.WrapContentLinearLayoutManager;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.autojs.AutoJs;
 import org.autojs.phonefarm.storage.database.ModelChange;
 import org.autojs.phonefarm.timing.TimedTaskManager;
-import org.autojs.phonefarm.ui.timing.TimedTaskSettingActivity;
-import org.autojs.phonefarm.ui.timing.TimedTaskSettingActivity_;
+// import org.autojs.phonefarm.ui.timing.TimedTaskSettingActivity;
+// import org.autojs.phonefarm.ui.timing.TimedTaskSettingActivity_;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -245,12 +246,14 @@ public class TaskListRecyclerView extends ThemeColorRecyclerView {
 
         void onItemClick(View view) {
             if (mTask instanceof Task.PendingTask) {
-                Task.PendingTask task = (Task.PendingTask) mTask;
-                String extra = task.getTimedTask() == null ? TimedTaskSettingActivity.EXTRA_INTENT_TASK_ID
-                        : TimedTaskSettingActivity.EXTRA_TASK_ID;
-                TimedTaskSettingActivity_.intent(getContext())
-                        .extra(extra, task.getId())
-                        .start();
+                // TODO: Implement timed task functionality
+                // Task.PendingTask task = (Task.PendingTask) mTask;
+                // String extra = task.getTimedTask() == null ? TimedTaskSettingActivity.EXTRA_INTENT_TASK_ID
+                //         : TimedTaskSettingActivity.EXTRA_TASK_ID;
+                // TimedTaskSettingActivity_.intent(getContext())
+                //         .extra(extra, task.getId())
+                //         .start();
+                Toast.makeText(getContext(), "Timed task feature is not available", Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -34,8 +34,8 @@ import org.autojs.phonefarm.devplugin.message.Hello
 import org.autojs.phonefarm.devplugin.message.HelloResponse
 import org.autojs.phonefarm.devplugin.message.LogData
 import org.autojs.phonefarm.devplugin.message.Message
-import org.autojs.autoxjs.BuildConfig
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.BuildConfig
+import org.autojs.phonefarm.R
 import java.io.File
 import java.net.SocketTimeoutException
 

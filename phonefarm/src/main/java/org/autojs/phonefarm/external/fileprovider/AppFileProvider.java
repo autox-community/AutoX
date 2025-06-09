@@ -5,7 +5,7 @@ import android.net.Uri;
 
 import androidx.core.content.FileProvider;
 
-import org.autojs.autoxjs.BuildConfig;
+import org.autojs.phonefarm.BuildConfig;
 
 import java.io.File;
 

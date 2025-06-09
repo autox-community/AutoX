@@ -51,7 +51,7 @@ import org.autojs.phonefarm.ui.main.rememberExternalStoragePermissionsState
 import org.autojs.phonefarm.ui.main.showExternalStoragePermissionToast
 import org.autojs.phonefarm.ui.viewmodel.ExplorerItemList.SortConfig
 import org.autojs.phonefarm.ui.widget.fillMaxSize
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 
 /**
  * Created by wilinz on 2022/7/15.

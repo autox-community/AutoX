@@ -17,8 +17,8 @@ import org.androidannotations.annotations.ViewById;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;
 import org.autojs.phonefarm.tool.IntentTool;
 import org.autojs.phonefarm.ui.BaseActivity;
-import org.autojs.autoxjs.BuildConfig;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.BuildConfig;
+import org.autojs.phonefarm.R;
 
 /**
  * Created by Stardust on 2017/2/2.

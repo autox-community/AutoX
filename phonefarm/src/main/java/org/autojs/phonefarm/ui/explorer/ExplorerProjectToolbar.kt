@@ -23,7 +23,7 @@ import org.autojs.phonefarm.model.explorer.Explorers
 import org.autojs.phonefarm.ui.build.BuildActivity.Companion.start
 import org.autojs.phonefarm.ui.build.ProjectConfigActivity
 import org.autojs.phonefarm.ui.build.ProjectConfigActivity_
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.greenrobot.eventbus.Subscribe
 import java.io.File
 

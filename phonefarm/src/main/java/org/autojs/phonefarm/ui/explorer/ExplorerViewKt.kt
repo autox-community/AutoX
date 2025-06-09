@@ -52,7 +52,7 @@ import org.autojs.phonefarm.ui.viewmodel.ExplorerItemList
 import org.autojs.phonefarm.ui.viewmodel.ExplorerItemList.SortConfig
 import org.autojs.phonefarm.ui.widget.BindableViewHolder
 import org.autojs.phonefarm.workground.WrapContentGridLayoutManger
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.util.Stack

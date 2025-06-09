@@ -454,7 +454,6 @@
         <activity
             android:name="org.autojs.phonefarm.ui.settings.SettingsActivity"
             android:theme="@style/AppTheme.Settings" />
-        <activity android:name="org.autojs.phonefarm.ui.error.ErrorReportActivity" />
         <activity
             android:name="org.autojs.phonefarm.external.tasker.TaskerScriptEditActivity_"
             android:configChanges="orientation|screenSize" />
@@ -473,7 +472,6 @@
         <activity android:name="org.autojs.phonefarm.ui.build.ProjectConfigActivity_" />
         <activity android:name="org.autojs.phonefarm.ui.log.LogActivityKt" />
         <activity android:name="org.autojs.phonefarm.ui.shortcut.ShortcutIconSelectActivity_" />
-        <activity android:name="org.autojs.phonefarm.ui.timing.TimedTaskSettingActivity_" />
         <activity
             android:name="org.autojs.phonefarm.ui.shortcut.ShortcutCreateActivity"
             android:theme="@style/AppTheme.Transparent" />
@@ -489,9 +487,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="org.autojs.phonefarm.ui.error.IssueReporterActivity"
-            android:theme="@style/IssueReporterTheme" />
 
         <service android:name="org.autojs.phonefarm.external.ScriptExecutionIntentService" />
         <service
@@ -685,14 +680,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
                 <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="org.autojs.phonefarm.timing.work.AlarmManagerProvider$AlarmManagerBroadcastReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.stardust.autojs.action.check_task" />
-                <action android:name="com.android.deskclock.ALARM_ALERT" />
             </intent-filter>
         </receiver>
         <provider

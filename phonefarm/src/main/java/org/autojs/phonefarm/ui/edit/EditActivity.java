@@ -35,7 +35,7 @@ import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;
 import org.autojs.phonefarm.tool.Observers;
 import org.autojs.phonefarm.ui.BaseActivity;
 import org.autojs.phonefarm.ui.main.MainActivity;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import java.io.File;
 import java.io.IOException;

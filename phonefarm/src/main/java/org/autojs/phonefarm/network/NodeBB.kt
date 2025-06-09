@@ -8,7 +8,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.autojs.phonefarm.network.api.ConfigApi
 import org.autojs.phonefarm.network.util.WebkitCookieManagerProxy
 import retrofit2.Retrofit

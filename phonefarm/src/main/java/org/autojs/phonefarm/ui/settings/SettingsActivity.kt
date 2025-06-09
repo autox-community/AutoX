@@ -18,7 +18,7 @@ import com.stardust.theme.util.ListBuilder
 import de.psdev.licensesdialog.LicensesDialog
 import org.autojs.phonefarm.ui.settings.LicenseInfo.install
 import org.autojs.phonefarm.ui.widget.CommonMarkdownView.DialogBuilder
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 
 /**
  * Created by Stardust on 2017/2/2.

@@ -16,7 +16,7 @@ import butterknife.OnCheckedChanged
 import butterknife.OnClick
 import com.stardust.pio.PFile
 import com.stardust.pio.PFiles
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.autojs.phonefarm.model.explorer.ExplorerItem
 import org.autojs.phonefarm.model.explorer.ExplorerPage
 import org.autojs.phonefarm.model.script.ScriptFile

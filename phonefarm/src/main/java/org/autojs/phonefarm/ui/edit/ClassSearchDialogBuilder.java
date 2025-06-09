@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.model.indices.AndroidClassIndices;
 import org.autojs.phonefarm.model.indices.ClassSearchingItem;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;

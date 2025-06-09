@@ -6,7 +6,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.stardust.app.GlobalAppContext;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.network.VersionService;
 import org.autojs.phonefarm.network.entity.VersionInfo;
 import org.autojs.phonefarm.tool.SimpleObserver;

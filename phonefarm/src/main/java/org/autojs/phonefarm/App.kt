@@ -29,8 +29,8 @@ import org.autojs.phonefarm.timing.TimedTaskManager
 import org.autojs.phonefarm.timing.TimedTaskScheduler
 import org.autojs.phonefarm.tool.CrashHandler
 // import org.autojs.phonefarm.ui.error.ErrorReportActivity
-import org.autojs.autoxjs.BuildConfig
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.BuildConfig
+import org.autojs.phonefarm.R
 import java.lang.ref.WeakReference
 
 /**

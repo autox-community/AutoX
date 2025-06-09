@@ -18,7 +18,7 @@ import com.stardust.util.ViewUtils;
 
 import org.autojs.phonefarm.Pref;
 import org.autojs.phonefarm.ui.edit.theme.Theme;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import java.util.LinkedHashMap;
 import java.util.Objects;

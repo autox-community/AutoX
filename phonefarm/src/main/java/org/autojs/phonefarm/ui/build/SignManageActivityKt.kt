@@ -32,7 +32,7 @@ import com.stardust.pio.PFiles
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.autojs.phonefarm.Pref
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.autojs.phonefarm.build.ApkKeyStore
 import org.autojs.phonefarm.build.ApkSigner
 import org.autojs.phonefarm.build.ApkSigner.checkKeyStore

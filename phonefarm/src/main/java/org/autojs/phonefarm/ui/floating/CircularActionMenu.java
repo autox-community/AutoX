@@ -17,7 +17,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 

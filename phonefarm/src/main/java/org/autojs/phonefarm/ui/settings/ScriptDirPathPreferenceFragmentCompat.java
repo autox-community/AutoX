@@ -12,7 +12,7 @@ import androidx.preference.EditTextPreferenceDialogFragmentCompat;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import org.autojs.phonefarm.Pref;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.model.explorer.Explorers;
 import org.autojs.phonefarm.storage.file.FileObservable;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;

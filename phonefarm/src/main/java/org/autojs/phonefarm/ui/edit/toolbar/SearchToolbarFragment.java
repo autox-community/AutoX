@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 import android.view.View;
 
 import org.androidannotations.annotations.EFragment;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import java.util.Arrays;
 import java.util.List;

@@ -21,7 +21,7 @@ import com.stardust.view.accessibility.AccessibilityService.Companion.instance
 import com.stardust.view.accessibility.LayoutInspector.CaptureAvailableListener
 import com.stardust.view.accessibility.NodeInfo
 import org.autojs.phonefarm.Pref
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.autojs.phonefarm.autojs.AutoJs
 import org.autojs.phonefarm.autojs.record.GlobalActionRecorder
 import org.autojs.phonefarm.model.explorer.ExplorerDirPage
