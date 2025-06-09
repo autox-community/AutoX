@@ -34,7 +34,7 @@ import org.autojs.phonefarm.model.explorer.ExplorerFileItem
 import org.autojs.phonefarm.model.explorer.Explorers
 import org.autojs.phonefarm.model.script.ScriptFile
 import org.autojs.phonefarm.tool.*
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import java.io.File
 import java.net.URLDecoder
 

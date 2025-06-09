@@ -13,7 +13,7 @@ import com.stardust.view.accessibility.AccessibilityService;
 import com.stardust.view.accessibility.LayoutInspector;
 import com.stardust.view.accessibility.NodeInfo;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.autojs.AutoJs;
 import org.autojs.phonefarm.tool.AccessibilityServiceTool;
 import org.autojs.phonefarm.ui.floating.FloatyWindowManger;

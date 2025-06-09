@@ -103,7 +103,7 @@ import org.autojs.phonefarm.ui.main.scripts.ScriptListFragment
 import org.autojs.phonefarm.ui.main.task.TaskManagerFragmentKt
 import org.autojs.phonefarm.ui.main.web.EditorAppManager
 import org.autojs.phonefarm.ui.widget.fillMaxSize
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 
 data class BottomNavigationItem(val icon: Int, val label: String)
 

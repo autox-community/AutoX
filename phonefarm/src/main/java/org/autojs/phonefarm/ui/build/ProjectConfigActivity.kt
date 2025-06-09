@@ -40,7 +40,7 @@ import org.autojs.phonefarm.ui.BaseActivity
 import org.autojs.phonefarm.ui.shortcut.ShortcutIconSelectActivity.Companion.getBitmapFromIntent
 import org.autojs.phonefarm.ui.shortcut.ShortcutIconSelectActivity_
 import org.autojs.phonefarm.ui.widget.SimpleTextWatcher
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import java.io.File
 import java.io.FileOutputStream
 

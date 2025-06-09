@@ -28,9 +28,9 @@ import org.autojs.phonefarm.theme.ThemeColorManagerCompat
 import org.autojs.phonefarm.timing.TimedTaskManager
 import org.autojs.phonefarm.timing.TimedTaskScheduler
 import org.autojs.phonefarm.tool.CrashHandler
-import org.autojs.phonefarm.ui.error.ErrorReportActivity
-import org.autojs.autoxjs.BuildConfig
-import org.autojs.autoxjs.R
+// import org.autojs.phonefarm.ui.error.ErrorReportActivity
+import org.autojs.phonefarm.BuildConfig
+import org.autojs.phonefarm.R
 import java.lang.ref.WeakReference
 
 /**
@@ -62,7 +62,8 @@ class App : MultiDexApplication(), Configuration.Provider {
 
     private fun setUpDebugEnvironment() {
         Bugly.isDev = false
-        val crashHandler = CrashHandler(ErrorReportActivity::class.java)
+        // val crashHandler = CrashHandler(ErrorReportActivity::class.java)
+        val crashHandler = CrashHandler(null)
 
         val strategy = CrashReport.UserStrategy(applicationContext)
         strategy.setCrashHandleCallback(crashHandler)

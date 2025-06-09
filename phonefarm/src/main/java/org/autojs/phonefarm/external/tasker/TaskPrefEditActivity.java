@@ -14,14 +14,14 @@ import com.twofortyfouram.locale.sdk.client.ui.activity.AbstractAppCompatPluginA
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.external.ScriptIntents;
 import org.autojs.phonefarm.model.explorer.ExplorerDirPage;
 import org.autojs.phonefarm.model.explorer.Explorers;
 import org.autojs.phonefarm.ui.BaseActivity;
 import org.autojs.phonefarm.ui.explorer.ExplorerViewKt;
 
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_CONTENT;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_CONTENT;
 
 
 /**

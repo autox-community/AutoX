@@ -7,7 +7,7 @@ import androidx.annotation.StringRes;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.stardust.pio.PFile;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.model.explorer.Explorer;
 import org.autojs.phonefarm.model.explorer.ExplorerDirPage;
 import org.autojs.phonefarm.model.explorer.ExplorerFileProvider;

@@ -13,7 +13,7 @@ import android.os.Build
 import android.os.SystemClock
 import android.util.Log
 import org.autojs.phonefarm.App
-import org.autojs.autoxjs.BuildConfig
+import org.autojs.phonefarm.BuildConfig
 import org.autojs.phonefarm.external.ScriptIntents
 import org.autojs.phonefarm.timing.TimedTask
 import org.autojs.phonefarm.timing.TimedTaskManager

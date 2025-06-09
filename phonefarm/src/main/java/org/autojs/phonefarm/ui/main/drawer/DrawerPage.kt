@@ -60,10 +60,10 @@ import org.autojs.phonefarm.ui.compose.widget.MyIcon
 import org.autojs.phonefarm.ui.compose.widget.MySwitch
 import org.autojs.phonefarm.ui.floating.FloatyWindowManger
 import org.autojs.phonefarm.ui.settings.SettingsActivity
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import org.joda.time.DateTimeZone
 import org.joda.time.Instant
-import org.autojs.autoxjs.BuildConfig
+import org.autojs.phonefarm.BuildConfig
 import androidx.compose.ui.text.style.TextAlign
 
 private const val TAG = "DrawerPage"

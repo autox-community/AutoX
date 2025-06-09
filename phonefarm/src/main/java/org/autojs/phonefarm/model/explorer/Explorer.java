@@ -10,7 +10,7 @@ import org.greenrobot.eventbus.EventBus;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
-import static org.autojs.autojs.model.explorer.ExplorerChangeEvent.*;
+import static org.autojs.phonefarm.model.explorer.ExplorerChangeEvent.*;
 
 
 public class Explorer {

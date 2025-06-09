@@ -182,17 +182,15 @@ dependencies {
     }
     // Common Markdown
     implementation("com.github.atlassian:commonmark-java:commonmark-parent-0.9.0")
-    // Android issue reporter (a github issue reporter)
-    implementation("com.heinrichreimersoftware:android-issue-reporter:1.3.1") {
-        exclude(group = "com.afollestad.material-dialogs")
-        exclude(group = "com.android.support")
-    }
+    // Android issue reporter (a github issue reporter) - REMOVED
     //MultiLevelListView
     implementation("com.github.hyb1996:android-multi-level-listview:1.1")
     //Licenses Dialog
     implementation("de.psdev.licensesdialog:licensesdialog:2.2.0")
     //Expandable RecyclerView
     implementation("com.bignerdranch.android:expandablerecyclerview:3.0.0-RC1")
+    //Expandable Layout - REMOVED
+    // implementation("com.github.AAkira:ExpandableLayout:2.9.2")
     //FlexibleDivider
     implementation("com.yqritc:recyclerview-flexibledivider:1.4.0")
     //???

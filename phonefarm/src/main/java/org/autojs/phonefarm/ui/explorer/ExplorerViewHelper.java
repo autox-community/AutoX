@@ -5,7 +5,7 @@ import android.graphics.Color;
 import com.stardust.app.GlobalAppContext;
 import com.stardust.pio.PFiles;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.model.explorer.ExplorerFileItem;
 import org.autojs.phonefarm.model.explorer.ExplorerItem;
 import org.autojs.phonefarm.model.explorer.ExplorerPage;
@@ -13,9 +13,9 @@ import org.autojs.phonefarm.model.explorer.ExplorerProjectPage;
 import org.autojs.phonefarm.model.explorer.ExplorerSamplePage;
 
 import static androidx.core.content.ContextCompat.getColor;
-import static org.autojs.autojs.model.explorer.ExplorerItem.TYPE_AUTO_FILE;
-import static org.autojs.autojs.model.explorer.ExplorerItem.TYPE_JAVASCRIPT;
-import static org.autojs.autojs.model.explorer.ExplorerItem.TYPE_UNKNOWN;
+import static org.autojs.phonefarm.model.explorer.ExplorerItem.TYPE_AUTO_FILE;
+import static org.autojs.phonefarm.model.explorer.ExplorerItem.TYPE_JAVASCRIPT;
+import static org.autojs.phonefarm.model.explorer.ExplorerItem.TYPE_UNKNOWN;
 
 public class ExplorerViewHelper {
 

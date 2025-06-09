@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 /**
  * Created by Stardust on 2017/1/29.

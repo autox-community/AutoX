@@ -87,7 +87,7 @@ import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder
 import org.autojs.phonefarm.ui.compose.widget.ProgressDialog
 import org.autojs.phonefarm.ui.filechooser.FileChooserDialogBuilder
 import org.autojs.phonefarm.ui.shortcut.ShortcutIconSelectResult
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import java.io.File
 import kotlin.reflect.KMutableProperty0
 

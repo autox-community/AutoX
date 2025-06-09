@@ -1,7 +1,7 @@
 package org.autojs.phonefarm.network.entity
 
 import com.google.gson.annotations.SerializedName
-import org.autojs.autoxjs.BuildConfig
+import org.autojs.phonefarm.BuildConfig
 
 class GithubReleaseInfoList : ArrayList<GithubReleaseInfo>()
 

@@ -7,14 +7,14 @@ import com.stardust.autojs.script.AutoFileSource;
 import com.stardust.autojs.script.JavaScriptSource;
 import com.stardust.pio.PFiles;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.timing.IntentTask;
 import org.autojs.phonefarm.timing.TimedTask;
 import org.autojs.phonefarm.timing.TimedTaskManager;
 
 import org.joda.time.format.DateTimeFormat;
 
-import static org.autojs.autojs.ui.timing.TimedTaskSettingActivity.ACTION_DESC_MAP;
+// import static org.autojs.autojs.ui.timing.TimedTaskSettingActivity.ACTION_DESC_MAP;
 
 /**
  * Created by Stardust on 2017/11/28.
@@ -72,10 +72,10 @@ public abstract class Task {
                         DateTimeFormat.forPattern("yyyy/MM/dd HH:mm").print(nextTime);
             } else {
                 assert mIntentTask != null;
-                Integer desc = ACTION_DESC_MAP.get(mIntentTask.getAction());
-                if(desc != null){
-                    return GlobalAppContext.getString(desc);
-                }
+                // Integer desc = ACTION_DESC_MAP.get(mIntentTask.getAction());
+                // if(desc != null){
+                //     return GlobalAppContext.getString(desc);
+                // }
                 return mIntentTask.getAction();
             }
 

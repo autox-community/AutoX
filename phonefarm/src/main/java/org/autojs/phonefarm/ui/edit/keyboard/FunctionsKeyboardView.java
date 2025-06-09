@@ -21,7 +21,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.model.indices.Module;
 import org.autojs.phonefarm.model.indices.Modules;
 import org.autojs.phonefarm.model.indices.Property;

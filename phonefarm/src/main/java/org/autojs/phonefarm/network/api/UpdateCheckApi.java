@@ -1,6 +1,6 @@
 package org.autojs.phonefarm.network.api;
 
-import org.autojs.autoxjs.BuildConfig;
+import org.autojs.phonefarm.BuildConfig;
 import org.autojs.phonefarm.network.entity.VersionInfo;
 
 import io.reactivex.Observable;

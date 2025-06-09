@@ -6,7 +6,7 @@ import android.text.TextUtils;
 
 import com.stardust.app.GlobalAppContext;
 import org.autojs.phonefarm.Pref;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import com.stardust.autojs.core.accessibility.AccessibilityService;
 import com.stardust.autojs.core.util.ProcessShell;

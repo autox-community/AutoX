@@ -19,7 +19,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.external.ScriptIntents;
 import org.autojs.phonefarm.external.shortcut.Shortcut;
 import org.autojs.phonefarm.external.shortcut.ShortcutActivity;

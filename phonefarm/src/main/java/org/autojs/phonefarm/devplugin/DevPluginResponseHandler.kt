@@ -20,7 +20,7 @@ import kotlinx.coroutines.withContext
 import org.autojs.phonefarm.Pref
 import org.autojs.phonefarm.autojs.AutoJs
 import org.autojs.phonefarm.model.script.Scripts.run
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import java.io.ByteArrayInputStream
 import java.io.File
 import java.io.FileInputStream

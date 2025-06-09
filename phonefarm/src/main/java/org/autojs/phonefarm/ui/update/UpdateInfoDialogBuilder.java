@@ -20,7 +20,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.stardust.util.IntentUtil;
 
 import org.autojs.phonefarm.Pref;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.external.fileprovider.AppFileProvider;
 import org.autojs.phonefarm.network.download.DownloadManager;
 import org.autojs.phonefarm.network.entity.VersionInfo;

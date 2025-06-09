@@ -3,7 +3,7 @@ package org.autojs.phonefarm.tool;
 import android.content.Context;
 import android.widget.Toast;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import com.stardust.util.IntentUtil;
 
 /**

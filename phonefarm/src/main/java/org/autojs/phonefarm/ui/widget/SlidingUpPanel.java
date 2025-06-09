@@ -12,7 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 /**
  * Created by Stardust on 2017/1/24.

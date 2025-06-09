@@ -13,7 +13,7 @@ import com.stardust.util.ClipboardUtil
 import com.stardust.util.sortedArrayOf
 import com.stardust.view.accessibility.NodeInfo
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 import java.lang.reflect.Field
 
 /**

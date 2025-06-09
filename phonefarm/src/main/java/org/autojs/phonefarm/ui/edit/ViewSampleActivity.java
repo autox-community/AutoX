@@ -19,7 +19,7 @@ import com.stardust.app.OnActivityResultDelegate;
 import com.stardust.autojs.engine.JavaScriptEngine;
 import com.stardust.autojs.execution.ScriptExecution;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.autojs.AutoJs;
 import org.autojs.phonefarm.model.sample.SampleFile;
 import org.autojs.phonefarm.ui.BaseActivity;
@@ -34,8 +34,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
-import static org.autojs.autojs.model.script.Scripts.ACTION_ON_EXECUTION_FINISHED;
-import static org.autojs.autojs.model.script.Scripts.EXTRA_EXCEPTION_MESSAGE;
+import static org.autojs.phonefarm.model.script.Scripts.ACTION_ON_EXECUTION_FINISHED;
+import static org.autojs.phonefarm.model.script.Scripts.EXTRA_EXCEPTION_MESSAGE;
 
 
 /**

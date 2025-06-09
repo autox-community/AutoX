@@ -10,7 +10,7 @@ import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.stardust.pio.PFiles;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.external.ScriptIntents;
 import org.autojs.phonefarm.external.open.RunIntentActivity;
 

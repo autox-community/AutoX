@@ -2,7 +2,7 @@ package org.autojs.phonefarm.ui.common;
 
 import android.content.Context;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;
 
 import io.reactivex.Observable;

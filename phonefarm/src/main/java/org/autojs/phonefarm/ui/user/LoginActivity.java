@@ -8,7 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.network.NodeBB;
 import org.autojs.phonefarm.network.UserService;
 import org.autojs.phonefarm.ui.BaseActivity;

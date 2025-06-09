@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.stardust.util.ClipboardUtil;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;
 import org.autojs.phonefarm.ui.widget.AutoAdapter;
 import org.autojs.phonefarm.ui.widget.BindableViewHolder;

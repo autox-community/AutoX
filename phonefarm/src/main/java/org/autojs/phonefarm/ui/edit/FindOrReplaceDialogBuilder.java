@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;
 import org.autojs.phonefarm.ui.edit.editor.CodeEditor;
 

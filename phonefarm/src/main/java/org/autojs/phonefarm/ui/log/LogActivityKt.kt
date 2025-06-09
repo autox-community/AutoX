@@ -24,7 +24,7 @@ import org.autojs.phonefarm.autojs.AutoJs
 import org.autojs.phonefarm.ui.compose.theme.AutoXJsTheme
 import org.autojs.phonefarm.ui.compose.util.SetSystemUI
 import org.autojs.phonefarm.ui.widget.fillMaxSize
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 
 class LogActivityKt : ComponentActivity() {
 

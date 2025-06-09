@@ -8,7 +8,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.stardust.concurrent.VolatileBox;
 import com.stardust.pio.PFiles;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.network.NodeBB;
 import org.autojs.phonefarm.network.api.DownloadApi;
 import org.autojs.phonefarm.tool.SimpleObserver;

@@ -33,7 +33,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.autojs.phonefarm.ui.main.MainActivity
-import org.autojs.autoxjs.R
+import org.autojs.phonefarm.R
 
 /**
  * Created by Stardust on 2017/7/7.

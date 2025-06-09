@@ -15,7 +15,7 @@ import com.stardust.pio.PFile;
 import com.stardust.pio.PFiles;
 
 import org.autojs.phonefarm.Pref;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.build.ApkSigner;
 
 import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;

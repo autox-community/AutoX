@@ -1,9 +1,9 @@
 package org.autojs.phonefarm.ui.edit;
 
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_CONTENT;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_NAME;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_PATH;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_READ_ONLY;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_CONTENT;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_NAME;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_PATH;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_READ_ONLY;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -35,7 +35,7 @@ import org.autojs.phonefarm.theme.dialog.ThemeColorMaterialDialogBuilder;
 import org.autojs.phonefarm.tool.Observers;
 import org.autojs.phonefarm.ui.BaseActivity;
 import org.autojs.phonefarm.ui.main.MainActivity;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import java.io.File;
 import java.io.IOException;

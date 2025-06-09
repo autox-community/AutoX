@@ -50,13 +50,13 @@ jobs:
 
       - name: 打包 PhoneFarm App
         run: |
-          ./gradlew phonefarm:assembleV6
+          ./gradlew phonefarm:assembleCommon
 
       - name: 对 APP 进行签名
         uses: Tlaster/android-sign@v1.2.2
         with:
           releaseDirectory: |
-            phonefarm/build/outputs/apk/v6/release
+            phonefarm/build/outputs/apk/common/release
           signingKeyBase64: ${{ secrets.ASIGNING_KEY }}
           alias: ${{ secrets.AALIAS }}
           keyStorePassword: ${{ secrets.AKEY_STORE_PASSWORD }}
@@ -68,9 +68,9 @@ jobs:
       - name: 重命名 apk
         run: |
           cd build/phonefarm/signed
-          mv phonefarm-v6-arm64-v8a-*.apk PhoneFarm-v6-arm64-v8a-release-${{steps.vars.outputs.short_ref}}.apk
-          mv phonefarm-v6-armeabi-v7a-*.apk PhoneFarm-v6-armeabi-v7a-release-${{steps.vars.outputs.short_ref}}.apk
-          mv phonefarm-v6-universal-*.apk PhoneFarm-v6-universal-release-${{steps.vars.outputs.short_ref}}.apk
+          mv phonefarm-common-arm64-v8a-*.apk PhoneFarm-common-arm64-v8a-release-${{steps.vars.outputs.short_ref}}.apk
+          mv phonefarm-common-armeabi-v7a-*.apk PhoneFarm-common-armeabi-v7a-release-${{steps.vars.outputs.short_ref}}.apk
+          mv phonefarm-common-universal-*.apk PhoneFarm-common-universal-release-${{steps.vars.outputs.short_ref}}.apk
           ls
 
       - name: Release

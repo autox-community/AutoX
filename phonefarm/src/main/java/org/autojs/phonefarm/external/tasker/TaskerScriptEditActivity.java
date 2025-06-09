@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.widget.Toast;
 
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 import org.autojs.phonefarm.timing.TaskReceiver;
 import org.autojs.phonefarm.tool.Observers;
 import org.autojs.phonefarm.ui.BaseActivity;
@@ -17,10 +17,10 @@ import org.androidannotations.annotations.ViewById;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_CONTENT;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_NAME;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_RUN_ENABLED;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_SAVE_ENABLED;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_CONTENT;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_NAME;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_RUN_ENABLED;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_SAVE_ENABLED;
 
 /**
  * Created by Stardust on 2017/4/5.

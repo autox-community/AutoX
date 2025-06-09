@@ -1,7 +1,7 @@
 package org.autojs.phonefarm.ui.edit.toolbar;
 
 import org.androidannotations.annotations.EFragment;
-import org.autojs.autoxjs.R;
+import org.autojs.phonefarm.R;
 
 import java.util.Arrays;
 import java.util.List;
