@@ -1,9 +1,9 @@
 package org.autojs.phonefarm.ui.edit;
 
-import static org.autojs.autojs.model.script.Scripts.ACTION_ON_EXECUTION_FINISHED;
-import static org.autojs.autojs.model.script.Scripts.EXTRA_EXCEPTION_COLUMN_NUMBER;
-import static org.autojs.autojs.model.script.Scripts.EXTRA_EXCEPTION_LINE_NUMBER;
-import static org.autojs.autojs.model.script.Scripts.EXTRA_EXCEPTION_MESSAGE;
+import static org.autojs.phonefarm.model.script.Scripts.ACTION_ON_EXECUTION_FINISHED;
+import static org.autojs.phonefarm.model.script.Scripts.EXTRA_EXCEPTION_COLUMN_NUMBER;
+import static org.autojs.phonefarm.model.script.Scripts.EXTRA_EXCEPTION_LINE_NUMBER;
+import static org.autojs.phonefarm.model.script.Scripts.EXTRA_EXCEPTION_MESSAGE;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

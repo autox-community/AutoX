@@ -13,9 +13,9 @@ import org.autojs.phonefarm.model.explorer.ExplorerProjectPage;
 import org.autojs.phonefarm.model.explorer.ExplorerSamplePage;
 
 import static androidx.core.content.ContextCompat.getColor;
-import static org.autojs.autojs.model.explorer.ExplorerItem.TYPE_AUTO_FILE;
-import static org.autojs.autojs.model.explorer.ExplorerItem.TYPE_JAVASCRIPT;
-import static org.autojs.autojs.model.explorer.ExplorerItem.TYPE_UNKNOWN;
+import static org.autojs.phonefarm.model.explorer.ExplorerItem.TYPE_AUTO_FILE;
+import static org.autojs.phonefarm.model.explorer.ExplorerItem.TYPE_JAVASCRIPT;
+import static org.autojs.phonefarm.model.explorer.ExplorerItem.TYPE_UNKNOWN;
 
 public class ExplorerViewHelper {
 

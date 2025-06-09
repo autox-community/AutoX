@@ -21,7 +21,7 @@ import org.autojs.phonefarm.model.explorer.Explorers;
 import org.autojs.phonefarm.ui.BaseActivity;
 import org.autojs.phonefarm.ui.explorer.ExplorerViewKt;
 
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_CONTENT;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_CONTENT;
 
 
 /**

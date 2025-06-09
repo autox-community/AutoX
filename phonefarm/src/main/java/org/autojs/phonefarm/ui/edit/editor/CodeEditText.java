@@ -1,6 +1,6 @@
 package org.autojs.phonefarm.ui.edit.editor;
 
-import static org.autojs.autojs.ui.edit.editor.BracketMatching.UNMATCHED_BRACKET;
+import static org.autojs.phonefarm.ui.edit.editor.BracketMatching.UNMATCHED_BRACKET;
 
 import android.content.Context;
 import android.graphics.Canvas;

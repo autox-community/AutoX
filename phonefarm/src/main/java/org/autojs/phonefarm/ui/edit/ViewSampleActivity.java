@@ -34,8 +34,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
-import static org.autojs.autojs.model.script.Scripts.ACTION_ON_EXECUTION_FINISHED;
-import static org.autojs.autojs.model.script.Scripts.EXTRA_EXCEPTION_MESSAGE;
+import static org.autojs.phonefarm.model.script.Scripts.ACTION_ON_EXECUTION_FINISHED;
+import static org.autojs.phonefarm.model.script.Scripts.EXTRA_EXCEPTION_MESSAGE;
 
 
 /**

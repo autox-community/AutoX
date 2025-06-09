@@ -1,9 +1,9 @@
 package org.autojs.phonefarm.ui.edit;
 
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_CONTENT;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_NAME;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_PATH;
-import static org.autojs.autojs.ui.edit.EditorView.EXTRA_READ_ONLY;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_CONTENT;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_NAME;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_PATH;
+import static org.autojs.phonefarm.ui.edit.EditorView.EXTRA_READ_ONLY;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
