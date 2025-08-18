@@ -40,7 +40,6 @@ abstract class AbstractAutoService : Service() {
             runningServices.forEach { serviceClass ->
                 serviceClass.stopServiceInternal()
             }
-            runningServices.clear()
         }
     }
 }
