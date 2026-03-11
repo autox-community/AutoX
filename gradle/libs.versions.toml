@@ -13,6 +13,7 @@ espresso-core = "3.5.1"
 appcompat = "1.4.2"
 material = "1.9.0"
 accompanist-version = "0.24.13-rc"
+mlkit-version = "16.0.1"
 
 [libraries]
 
@@ -65,7 +66,7 @@ rxjava3 = "io.reactivex.rxjava3:rxjava:3.1.5"
 rxjava3-rxandroid = "io.reactivex.rxjava3:rxandroid:3.0.2"
 #leakcanary
 leakcanary-android = "com.squareup.leakcanary:leakcanary-android:2.13"
-leakcanary-object-watcher-android = "com.squareup.leakcanary:leakcanary-object-watcher-android:2.13"
+leakcanary-watcher-android = "com.squareup.leakcanary:leakcanary-object-watcher-android:2.13"
 
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
@@ -74,8 +75,16 @@ material = { group = "com.google.android.material", name = "material", version.r
 andserver-processor = { module = "com.yanzhenjie.andserver:processor", version.ref = "andserver" }
 andserver-api = { module = "com.yanzhenjie.andserver:api", version.ref = "andserver" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version = "2.1.4" }
+
+# mlkit
+mlkit-text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "mlkit-version" }
+mlkit-text-recognition-chinese = { module = "com.google.mlkit:text-recognition-chinese", version.ref = "mlkit-version" }
+mlkit-text-recognition-devanagari = { module = "com.google.mlkit:text-recognition-devanagari", version.ref = "mlkit-version" }
+mlkit-text-recognition-japanese = { module = "com.google.mlkit:text-recognition-japanese", version.ref = "mlkit-version" }
+mlkit-text-recognition-korean = { module = "com.google.mlkit:text-recognition-korean", version.ref = "mlkit-version" }
 [plugins]
 
 [bundles]
 ktor = ["ktor-server-core", "ktor-server-netty", "ktor-server-websockets", "ktor-client-websockets", "ktor-client-okhttp", "ktor-client-core"]
 accompanist = ["accompanist-webview", "accompanist-systemuicontroller", "accompanist-insets-ui", "accompanist-insets", "accompanist-appcompat-theme", "accompanist-swiperefresh", "accompanist-pager", "accompanist-pager-indicators", "accompanist-permissions"]
+mlkit = ["mlkit-text-recognition", "mlkit-text-recognition-chinese", "mlkit-text-recognition-devanagari", "mlkit-text-recognition-japanese", "mlkit-text-recognition-korean"]

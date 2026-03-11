@@ -2,6 +2,7 @@ package com.stardust.autojs.core.mlkit
 
 import android.graphics.Rect
 import kotlin.math.abs
+import kotlin.math.min
 
 data class GoogleMLKitOcrResult(
     val level: Int,
@@ -114,11 +115,17 @@ data class GoogleMLKitOcrResult(
     }
 
     override fun compareTo(other: GoogleMLKitOcrResult): Int {
-        val deviation = (bounds!!.height() / 2f).coerceAtLeast(other.bounds!!.height() / 2f)
-        return if (abs((bounds.top + bounds.bottom) / 2f - (other.bounds.top + other.bounds.bottom) / 2f) < deviation) {
-            bounds.left - other.bounds.left
-        } else {
-            bounds.bottom - other.bounds.bottom
+        // 1. 使用固定阈值替代动态偏差（避免破坏传递性）
+        val yThreshold = min(bounds!!.height(), other.bounds!!.height()) * 0.5f
+
+        // 2. 优先比较垂直位置（确保传递性）
+        val thisCenterY = (bounds.top + bounds.bottom) / 2f
+        val otherCenterY = (other.bounds.top + other.bounds.bottom) / 2f
+
+        // 3. 使用稳定的比较逻辑：同水平线：按左边界排序；不同水平线：按垂直中线排序
+        return when {
+            abs(thisCenterY - otherCenterY) < yThreshold -> bounds.left.compareTo(other.bounds.left)
+            else -> thisCenterY.compareTo(otherCenterY)
         }
     }
 

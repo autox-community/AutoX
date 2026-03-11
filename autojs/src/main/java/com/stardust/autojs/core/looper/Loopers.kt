@@ -127,6 +127,12 @@ class Loopers(val runtime: ScriptRuntime) {
         mServantLooper?.quit()
     }
 
+    fun forceStop() {
+        if (!isUiLooper) {
+            myLooper.quit()
+        }
+    }
+
     @Deprecated("使用AsyncTask代替")
     fun setMainLooperQuitHandler(mainLooperQuitHandler: LooperQuitHandler?) {
         mMainLooperQuitHandler = mainLooperQuitHandler

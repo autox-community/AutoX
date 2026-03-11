@@ -19,7 +19,7 @@ buildscript {
         mavenCentral { url = uri("https://maven.aliyun.com/repository/public") }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.0.2")
+        classpath("com.android.tools.build:gradle:8.5.0")
         classpath(kotlin("gradle-plugin", version = "$kotlin_version"))
         classpath("com.jakewharton:butterknife-gradle-plugin:10.2.3")
         classpath("org.codehaus.groovy:groovy-json:3.0.8")
@@ -38,6 +38,12 @@ allprojects {
         maven("https://maven.aliyun.com/repository/central")
         google { url = uri("https://maven.aliyun.com/repository/google") }
         mavenCentral { url = uri("https://maven.aliyun.com/repository/public") }
+    }
+    configurations.all {
+        resolutionStrategy {
+            // 强制指定 androidx.core 版本
+            force("androidx.core:core:1.8.0")
+        }
     }
 //    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java){
 //        kotlinOptions{

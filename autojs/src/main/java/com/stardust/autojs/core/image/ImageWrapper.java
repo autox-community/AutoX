@@ -3,7 +3,6 @@ package com.stardust.autojs.core.image;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.media.Image;
-import android.os.Build;
 
 import com.stardust.autojs.core.opencv.Mat;
 import com.stardust.autojs.core.opencv.OpenCVHelper;
@@ -16,7 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.nio.ByteBuffer;
 
-import androidx.annotation.RequiresApi;
+import androidx.annotation.NonNull;
 
 /**
  * Created by Stardust on 2017/11/25.
@@ -139,10 +138,7 @@ public class ImageWrapper {
     }
 
     public void recycle() {
-        if (mBitmap != null) {
-            mBitmap.recycle();
-            mBitmap = null;
-        }
+        mBitmap = null;
         if (mMat != null) {
             OpenCVHelper.release(mMat);
             mMat = null;
@@ -155,6 +151,7 @@ public class ImageWrapper {
             throw new IllegalStateException("image has been recycled");
     }
 
+    @NonNull
     public ImageWrapper clone() {
         ensureNotRecycled();
         if (mBitmap == null) {

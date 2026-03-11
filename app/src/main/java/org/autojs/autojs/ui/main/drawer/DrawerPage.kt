@@ -11,33 +11,62 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.*
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.windowInsetsBottomHeight
+import androidx.compose.foundation.layout.windowInsetsTopHeight
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.AlertDialog
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.RadioButton
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.window.Dialog
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.preference.PreferenceManager
-import coil.compose.rememberAsyncImagePainter
 import com.stardust.app.GlobalAppContext
 import com.stardust.app.isOpPermissionGranted
 import com.stardust.app.permission.DrawOverlaysPermission
 import com.stardust.app.permission.DrawOverlaysPermission.launchCanDrawOverlaysSettings
 import com.stardust.app.permission.PermissionsSettingsUtil
+import com.stardust.app.service.AbstractAutoService.Companion.stopAllServices
 import com.stardust.enhancedfloaty.FloatyService
 import com.stardust.notification.NotificationListenerService
 import com.stardust.toast
@@ -46,7 +75,11 @@ import com.stardust.view.accessibility.AccessibilityService
 import io.github.g00fy2.quickie.QRResult
 import io.github.g00fy2.quickie.ScanQRCode
 import io.noties.markwon.Markwon
-import kotlinx.coroutines.*
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.autojs.autojs.Pref
 import org.autojs.autojs.autojs.AutoJs
 import org.autojs.autojs.devplugin.DevPlugin
@@ -60,11 +93,10 @@ import org.autojs.autojs.ui.compose.widget.MyIcon
 import org.autojs.autojs.ui.compose.widget.MySwitch
 import org.autojs.autojs.ui.floating.FloatyWindowManger
 import org.autojs.autojs.ui.settings.SettingsActivity
+import org.autojs.autoxjs.BuildConfig
 import org.autojs.autoxjs.R
 import org.joda.time.DateTimeZone
 import org.joda.time.Instant
-import org.autojs.autoxjs.BuildConfig
-import androidx.compose.ui.text.style.TextAlign
 
 private const val TAG = "DrawerPage"
 private const val URL_DEV_PLUGIN = "https://github.com/kkevsekk1/Auto.js-VSCode-Extension"
@@ -304,11 +336,11 @@ private fun BottomButtons() {
 }
 
 fun exitCompletely(context: Context) {
-    if (context is Activity) context.finish()
-    FloatyWindowManger.hideCircularMenu()
-    ForegroundService.stop(context)
-    context.stopService(Intent(context, FloatyService::class.java))
     AutoJs.getInstance().scriptEngineService.stopAll()
+    FloatyWindowManger.hideCircularMenu()
+    context.stopService(Intent(context, FloatyService::class.java))
+    stopAllServices()
+    if (context is Activity) context.finish()
 }
 
 @Composable

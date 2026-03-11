@@ -4,41 +4,27 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.media.projection.MediaProjection
 import android.os.Build
 import android.os.Handler
 import android.os.IBinder
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
+import com.stardust.app.service.AbstractAutoService
 import com.stardust.autojs.R
-import com.stardust.autojs.core.image.capture.ScreenCaptureRequestActivity
 
 /**
  * Created by TonyJiangWJ(https://github.com/TonyJiangWJ).
  * From [TonyJiangWJ/Auto.js](https://github.com/TonyJiangWJ/Auto.js)
  */
-class CaptureForegroundService : Service() {
+class CaptureForegroundService : AbstractAutoService() {
+
     val callback = object : MediaProjection.Callback() {
         override fun onStop() {
-            stopSelf()
+            stopServiceInternal()
         }
-    }
-
-    override fun onBind(intent: Intent): IBinder? {
-        return null
-    }
-
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        super.onStartCommand(intent, flags, startId)
-        if (intent.action == (STOP)) {
-            Log.i(TAG, "stopSelf")
-            stopSelf()
-        }
-        mediaProjection?.registerCallback(callback, Handler(mainLooper))
-        return START_NOT_STICKY
     }
 
     override fun onCreate() {
@@ -46,6 +32,29 @@ class CaptureForegroundService : Service() {
         startForeground(NOTIFICATION_ID, buildNotification())
     }
 
+    override fun onBind(intent: Intent): IBinder? {
+        return null
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        val action = intent?.action
+        when (action) {
+            STOP -> stopServiceInternal()
+            REGISTER -> mediaProjection?.registerCallback(callback, Handler(mainLooper))
+        }
+        super.onStartCommand(intent, flags, startId)
+        return START_NOT_STICKY
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaProjection?.unregisterCallback(callback)
+        mediaProjection?.stop()
+        removeNotification()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            stopForeground(STOP_FOREGROUND_REMOVE)
+        }
+    }
 
     private fun buildNotification(): Notification {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -99,20 +108,26 @@ class CaptureForegroundService : Service() {
         (getSystemService(NOTIFICATION_SERVICE) as NotificationManager).cancel(NOTIFICATION_ID)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaProjection?.unregisterCallback(callback)
-        mediaProjection?.stop()
-        removeNotification()
-        stopForeground(true)
-    }
 
     companion object {
-        var mediaProjection: MediaProjection? = null
-        private const val TAG = "CaptureService"
+        private var mediaProjection: MediaProjection? = null
         private const val STOP = "STOP_SERVICE"
+        private const val REGISTER = "REGISTER_CALLBACK"
         private const val NOTIFICATION_ID = 2
         private val CHANNEL_ID = CaptureForegroundService::class.java.name + ".foreground"
         private const val NOTIFICATION_TITLE = "前台截图服务运行中"
+
+
+        fun setMediaProjection(context: Context, media: MediaProjection) {
+            mediaProjection = media
+            val intent = Intent(context, CaptureForegroundService::class.java).apply {
+                action = REGISTER
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                context.startForegroundService(intent)
+            } else {
+                context.startService(intent)
+            }
+        }
     }
 }

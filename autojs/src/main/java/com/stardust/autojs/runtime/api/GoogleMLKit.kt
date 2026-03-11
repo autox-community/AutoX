@@ -1,7 +1,6 @@
 package com.stardust.autojs.runtime.api
 
 import android.util.Log
-import com.baidu.paddle.lite.demo.ocr.OcrResult
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
@@ -52,7 +51,16 @@ class GoogleMLKit {
                                         text = e.text,
                                         language = e.recognizedLanguage,
                                         bounds = e.boundingBox,
-                                        children = null
+                                        children = e.symbols.map { symbol ->
+                                            GoogleMLKitOcrResult(
+                                                level = 4,
+                                                confidence = symbol.confidence,
+                                                text = symbol.text,
+                                                language = e.recognizedLanguage,
+                                                bounds = symbol.boundingBox,
+                                                children = null
+                                            )
+                                        }
                                     )
                                 }
                             )

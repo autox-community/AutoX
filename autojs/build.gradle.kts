@@ -32,7 +32,7 @@ android {
 dependencies {
     androidTestImplementation(libs.espresso.core)
     debugImplementation(libs.leakcanary.android)
-    implementation(libs.leakcanary.`object`.watcher.android)
+    implementation(libs.leakcanary.watcher.android)
     testImplementation(libs.junit)
 
     implementation(libs.documentfile)
@@ -67,10 +67,6 @@ dependencies {
     // libs
     api(fileTree("../app/libs"){include("dx.jar", "rhino-1.7.14-jdk7.jar")})
     api("cz.adaptech:tesseract4android:4.1.1")
-    api("com.google.mlkit:text-recognition:16.0.0-beta5")
-    api("com.google.mlkit:text-recognition-chinese:16.0.0-beta5")
-    api("com.google.mlkit:text-recognition-devanagari:16.0.0-beta5")
-    api("com.google.mlkit:text-recognition-japanese:16.0.0-beta5")
-    api("com.google.mlkit:text-recognition-korean:16.0.0-beta5")
+    implementation(libs.bundles.mlkit)
 }
 

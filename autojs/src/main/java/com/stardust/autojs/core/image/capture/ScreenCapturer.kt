@@ -2,6 +2,7 @@ package com.stardust.autojs.core.image.capture
 
 import android.content.Context
 import android.content.res.Configuration
+import android.graphics.Bitmap
 import android.graphics.PixelFormat
 import android.hardware.display.DisplayManager
 import android.hardware.display.VirtualDisplay
@@ -13,7 +14,6 @@ import android.os.Looper
 import android.util.Log
 import com.stardust.autojs.core.image.ImageWrapper
 import com.stardust.util.ScreenMetrics
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.yield
@@ -33,8 +33,7 @@ class ScreenCapturer(
     private var mVirtualDisplay: VirtualDisplay
     private var mImageReader: ImageReader
 
-    private val mCachedImage = AtomicReference<Image?>()
-    private val mCachedImageWrapper = AtomicReference<ImageWrapper?>()
+    private val cachedImageBitmap = AtomicReference<Bitmap?>()
 
     @Volatile
     var available = true
@@ -74,8 +73,6 @@ class ScreenCapturer(
 
     private fun refreshVirtualDisplay(orientation: Int) = synchronized(this) {
         mImageReader.close()
-        mCachedImage.set(null)
-        mCachedImageWrapper.set(null)
         val screenHeight = ScreenMetrics.getOrientationAwareScreenHeight(orientation)
         val screenWidth = ScreenMetrics.getOrientationAwareScreenWidth(orientation)
         mImageReader = createImageReader(screenWidth, screenHeight)
@@ -86,18 +83,15 @@ class ScreenCapturer(
     fun capture(): Image? = synchronized(this) {
         if (!available) throw Exception("ScreenCapturer is not available")
         val newImage = mImageReader.acquireLatestImage()
-        if (newImage != null) {
-            mCachedImage.getAndSet(newImage)?.close()
-        }
         return newImage
     }
 
-    suspend fun captureImageWrapper(): ImageWrapper = coroutineScope {
+    suspend fun captureImageWrapper(): ImageWrapper {
         var image = capture()
-        val imageWrapper = mCachedImageWrapper.get()
-        if (image == null && imageWrapper != null) {
+        val preBitmap = cachedImageBitmap.get()
+        if (image == null && preBitmap != null) {
             Log.i(LOG_TAG, "Using cached image")
-            return@coroutineScope imageWrapper
+            return ImageWrapper.ofBitmap(preBitmap)
         }
         //在缓存图像均不可用的情况下等待2秒取得截图，否则抛出错误
         val newImage = image ?: runCatching {
@@ -107,23 +101,22 @@ class ScreenCapturer(
                     image = capture()
                 }
                 yield()
-                return@withTimeout image!!
+                image!!
             }
         }.getOrElse {
-            it.printStackTrace()
             available = false
             throw Exception("ScreenCapturer timeout")
         }
-        val newImageWrapper = ImageWrapper.ofImage(newImage)
-        mCachedImageWrapper.set(newImageWrapper)
-        return@coroutineScope newImageWrapper ?: throw Exception("Not available yet ImageWrapper")
+        val bitmap = ImageWrapper.toBitmap(newImage)
+        newImage.close()
+        cachedImageBitmap.set(bitmap)
+        return ImageWrapper.ofBitmap(bitmap)
     }
 
     fun release() = synchronized(this) {
         available = false
         mVirtualDisplay.release()
         mImageReader.close()
-        mCachedImage.getAndSet(null)?.close()
     }
 
     @Throws(Throwable::class)

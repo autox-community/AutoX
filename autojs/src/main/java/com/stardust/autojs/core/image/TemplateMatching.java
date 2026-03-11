@@ -1,5 +1,6 @@
 package com.stardust.autojs.core.image;
 
+import android.util.Log;
 import android.util.TimingLogger;
 
 import com.stardust.autojs.core.opencv.OpenCVHelper;
@@ -72,70 +73,87 @@ public class TemplateMatching {
      */
     public static List<Match> fastTemplateMatching(Mat img, Mat template, int matchMethod, float weakThreshold, float strictThreshold, int maxLevel, int limit) {
         TimingLogger logger = new TimingLogger(LOG_TAG, "fast_tm");
-        if (maxLevel == MAX_LEVEL_AUTO) {
-            //自动选取金字塔层数
-            maxLevel = selectPyramidLevel(img, template);
-            logger.addSplit("selectPyramidLevel:" + maxLevel);
-        }
-        //保存每一轮匹配到模板图片在原图片的位置
-        List<Match> finalMatchResult = new ArrayList<>();
-        List<Match> previousMatchResult = Collections.emptyList();
-        boolean isFirstMatching = true;
-        for (int level = maxLevel; level >= 0; level--) {
-            // 放缩图片
-            List<Match> currentMatchResult = new ArrayList<>();
-            Mat src = getPyramidDownAtLevel(img, level);
-            Mat currentTemplate = getPyramidDownAtLevel(template, level);
-            // 如果在上一轮中没有匹配到图片，则考虑是否退出匹配
-            if (previousMatchResult.isEmpty()) {
-                // 如果不是第一次匹配，并且不满足shouldContinueMatching的条件，则直接退出匹配
-                if (!isFirstMatching && !shouldContinueMatching(level, maxLevel)) {
-                    break;
-                }
-                Mat matchResult = matchTemplate(src, currentTemplate, matchMethod);
-                getBestMatched(matchResult, currentTemplate, matchMethod, weakThreshold, currentMatchResult, limit, null);
-                OpenCVHelper.release(matchResult);
-            } else {
-                for (Match match : previousMatchResult) {
-                    // 根据上一轮的匹配点，计算本次匹配的区域
-                    Rect r = getROI(match.point, src, currentTemplate);
-                    Mat m = new Mat(src, r);
-                    Mat matchResult = matchTemplate(m, currentTemplate, matchMethod);
-                    getBestMatched(matchResult, currentTemplate, matchMethod, weakThreshold, currentMatchResult, limit, r);
-                    OpenCVHelper.release(m);
-                    OpenCVHelper.release(matchResult);
-                }
+        // 创建资源回收列表
+        List<Mat> resourcesToRelease = new ArrayList<>();
+
+        try {
+            if (maxLevel == MAX_LEVEL_AUTO) {
+                maxLevel = selectPyramidLevel(img, template);
+                logger.addSplit("selectPyramidLevel:" + maxLevel);
             }
+            List<Match> finalMatchResult = new ArrayList<>();
+            List<Match> previousMatchResult = Collections.emptyList();
+            boolean isFirstMatching = true;
+            for (int level = maxLevel; level >= 0; level--) {
+                List<Match> currentMatchResult = new ArrayList<>();
+                Mat src = getPyramidDownAtLevel(img, level);
+                Mat currentTemplate = getPyramidDownAtLevel(template, level);
 
-            if (src != img)
-                OpenCVHelper.release(src);
-            if (currentTemplate != template)
-                OpenCVHelper.release(currentTemplate);
+                // +++ 添加到释放列表 +++
+                if (src != img) {
+                    resourcesToRelease.add(src);
+                }
+                if (currentTemplate != template) {
+                    resourcesToRelease.add(currentTemplate);
+                }
 
-            logger.addSplit("level:" + level + ", result:" + previousMatchResult);
+                // 如果在上一轮中没有匹配到图片，则考虑是否退出匹配
+                if (previousMatchResult.isEmpty()) {
+                    // 如果不是第一次匹配，并且不满足shouldContinueMatching的条件，则直接退出匹配
+                    if (!isFirstMatching && !shouldContinueMatching(level, maxLevel)) {
+                        break;
+                    }
+                    Mat matchResult = matchTemplate(src, currentTemplate, matchMethod);
+                    resourcesToRelease.add(matchResult);
+                    getBestMatched(matchResult, currentTemplate, matchMethod, weakThreshold, currentMatchResult, limit, null);
+                } else {
+                    for (Match match : previousMatchResult) {
+                        Rect r = getROI(match.point, src, currentTemplate);
+                        Mat m = new Mat(src, r);
+                        Mat matchResult = matchTemplate(m, currentTemplate, matchMethod);
 
-            // 把满足强阈值的点找出来，加到最终结果列表
-            if (!currentMatchResult.isEmpty()) {
-                Iterator<Match> iterator = currentMatchResult.iterator();
-                while (iterator.hasNext()) {
-                    Match match = iterator.next();
-                    if (match.similarity >= strictThreshold) {
-                        pyrUp(match.point, level);
-                        finalMatchResult.add(match);
-                        iterator.remove();
+                        // +++ 添加到释放列表 +++
+                        resourcesToRelease.add(m);
+                        resourcesToRelease.add(matchResult);
+
+                        getBestMatched(matchResult, currentTemplate, matchMethod, weakThreshold, currentMatchResult, limit, r);
                     }
                 }
-                // 如果所有结果都满足强阈值，则退出循环，返回最终结果
-                if (currentMatchResult.isEmpty()) {
-                    break;
+
+                logger.addSplit("level:" + level + ", result:" + previousMatchResult);
+
+                // 把满足强阈值的点找出来，加到最终结果列表
+                if (!currentMatchResult.isEmpty()) {
+                    Iterator<Match> iterator = currentMatchResult.iterator();
+                    while (iterator.hasNext()) {
+                        Match match = iterator.next();
+                        if (match.similarity >= strictThreshold) {
+                            pyrUp(match.point, level);
+                            finalMatchResult.add(match);
+                            iterator.remove();
+                        }
+                    }
+                    // 如果所有结果都满足强阈值，则退出循环，返回最终结果
+                    if (currentMatchResult.isEmpty()) {
+                        break;
+                    }
+                }
+                isFirstMatching = false;
+                previousMatchResult = currentMatchResult;
+            }
+            logger.addSplit("result:" + finalMatchResult);
+            logger.dumpToLog();
+            return finalMatchResult;
+        } finally {
+            // 释放所有中间Mat对象
+            for (Mat mat : resourcesToRelease) {
+                try {
+                    OpenCVHelper.release(mat);
+                } catch (Exception e) {
+                    Log.e(LOG_TAG, "Error releasing Mat resource", e);
                 }
             }
-            isFirstMatching = false;
-            previousMatchResult = currentMatchResult;
         }
-        logger.addSplit("result:" + finalMatchResult);
-        logger.dumpToLog();
-        return finalMatchResult;
     }
 
 
